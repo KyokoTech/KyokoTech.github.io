@@ -19,59 +19,115 @@
 
         /* Set background color and text styles */
         body {
-            background-color: #2E2E2E;
+            background-color: #B3B8EA;
             font-family: Arial, sans-serif;
             color: #FFFFFF;
             text-align: center;
             font-family: 'Space Mono', monospace;
-            /* Replace 'Roboto' with your chosen font */
-        }
-
-        /* Center the logo */
-        .logo {
-            margin-top: 100px;
-        }
-
-        .logo>img {
-            max-height: 60vh;
-            /* Adjust the value as needed to control the size */
-            max-width: 100%;
         }
 
         /* Style the "coming soon..." text */
         .coming-soon {
             font-size: 24px;
             margin-top: 20px;
+            width: 100%;
         }
 
         /* Style the trademark information */
         .trademark {
             font-size: 12px;
-            margin-top: 20px;
+            margin-top: 5px;
+            width: 100%;
         }
 
-        /* Animation on page load */
-        @keyframes fade-in {
-            from {
-                opacity: 0;
+        /* Video container centered slightly to the left and smaller */
+        .video-container {
+            position: relative;
+            max-width: 60%;
+            margin: 0 auto;
+        }
+
+        /* Style the video */
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Loading overlay with material design animation */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
             }
 
-            to {
-                opacity: 1;
+            100% {
+                transform: rotate(360deg);
             }
         }
 
-        /* Apply animation to the entire page */
-        html {
-            animation: fade-in 2s;
+        /* Style the overlay header */
+        .overlay-header {
+            position: absolute;
+            top: 28%;
+            right: 13%;
+            font-size: 36px;
+            font-weight: bold;
+            color: #FFFFFF;
+            z-index: 1;
+        }
+
+        /* Media query for smaller screens (e.g., mobile) */
+        @media (max-width: 768px) {
+
+            /* Make the video container 100% width */
+            .video-container {
+                max-width: 100%;
+            }
+
+            /* Increase the font size of the overlay header */
+            .overlay-header {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Kyoko logo -->
-    <div class="logo">
-        <img src="img/Kyoko.jpg" alt="Kyoko Logo">
+    <!-- Video container centered slightly to the left and smaller -->
+    <div class="video-container">
+        <!-- Overlay header -->
+        <div class="overlay-header">
+            kyoko
+        </div>
+        <video autoplay muted loop id="background-video">
+            <source src="img/animated_mirror.mp4" type="video/mp4">
+            <!-- Add additional source elements for other video formats if needed -->
+        </video>
+    </div>
+
+    <!-- Loading overlay with material design animation -->
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
     </div>
 
     <!-- "Coming Soon..." text -->
@@ -83,6 +139,15 @@
     <div class="trademark">
         &copy; Kyoko Corp.
     </div>
+
+    <!-- JavaScript to hide the loading overlay when the video is loaded -->
+    <script>
+        const video = document.getElementById("background-video");
+        video.addEventListener("canplaythrough", () => {
+            const loadingOverlay = document.querySelector(".loading-overlay");
+            loadingOverlay.style.display = "none";
+        });
+    </script>
 </body>
 
 </html>

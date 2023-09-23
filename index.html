@@ -1,1 +1,91 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyoko - Coming Soon</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set background color and text styles */
+        body {
+            background-color: #2E2E2E;
+            font-family: Arial, sans-serif;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            /* Replace 'Roboto' with your chosen font */
+        }
+
+        /* Center the logo */
+        .logo {
+            margin-top: 100px;
+        }
+
+        /* Limit logo size to full screen height and make it slightly smaller */
+        /* .logo {
+            max-height: 60vh;
+            /* Adjust the value as needed to control the size */
+        /* max-width: 100%;
+        } */
+
+        .logo>img {
+            max-height: 60vh;
+            /* Adjust the value as needed to control the size */
+            max-width: 100%;
+        }
+
+        /* Style the "coming soon..." text */
+        .coming-soon {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Style the trademark information */
+        .trademark {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Animation on page load */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation to the entire page */
+        html {
+            animation: fade-in 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Kyoko logo -->
+    <div class="logo">
+        <img src="img/Kyoko.svg" alt="Kyoko Logo">
+    </div>
+
+    <!-- "Coming Soon..." text -->
+    <div class="coming-soon">
+        Coming Soon...
+    </div>
+
+    <!-- Trademark information -->
+    <div class="trademark">
+        &copy; TheKyokoGroup Corp.
+    </div>
+</body>
+
+</html>

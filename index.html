@@ -1,169 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyoko - Coming Soon</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <style>
-        /* Reset some default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Set background color and text styles */
-        body {
-            background-color: #B3B8EA;
-            font-family: Arial, sans-serif;
-            color: #FFFFFF;
-            text-align: center;
-            font-family: 'Space Mono', monospace;
-            opacity: 0;
-            /* Initial opacity set to 0 */
-            animation: fadeIn 1.5s ease-in-out forwards;
-            /* Apply the fade-in animation */
-
-        }
-
-        /* Style the "coming soon..." text */
-        .coming-soon {
-            font-size: 24px;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        /* Style the trademark information */
-        .trademark {
-            font-size: 12px;
-            margin-top: 5px;
-            width: 100%;
-        }
-
-        /* Video container centered slightly to the left and smaller */
-        .video-container {
-            position: relative;
-            max-width: 60%;
-            margin: 0 auto;
-        }
-
-        /* Style the video */
-        video {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        /* Loading overlay with material design animation */
-        .loading-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .loading-spinner {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Style the overlay header */
-        .overlay-header {
-            position: absolute;
-            top: 28%;
-            right: 13%;
-            font-size: 36px;
-            font-weight: bold;
-            color: #FFFFFF;
-            z-index: 1;
-        }
-
-        /* Media query for smaller screens (e.g., mobile) */
-        @media (max-width: 768px) {
-
-            /* Make the video container 100% width */
-            .video-container {
-                max-width: 100%;
-            }
-
-            /* Increase the font size of the overlay header */
-            .overlay-header {
-                font-size: 24px;
-            }
-        }
-
-        /* Keyframes for fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+	<title>Kyoko Technologies - Home</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" type="image/x-icon" href="images/kyokofav.png">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
 </head>
 
-<body>
-    <!-- Video container centered slightly to the left and smaller -->
-    <div class="video-container">
-        <!-- Overlay header -->
-        <div class="overlay-header">
-            kyoko
-        </div>
-        <video autoplay muted playsinline loop id="background-video">
-            <source src="img/animated_mirror.mp4" type="video/mp4">
-            <!-- Add additional source elements for other video formats if needed -->
-        </video>
-    </div>
+<body class="is-preload">
 
-    <!-- Loading overlay with material design animation -->
-    <div class="loading-overlay">
-        <div class="loading-spinner"></div>
-    </div>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-    <!-- "Coming Soon..." text -->
-    <div class="coming-soon">
-        Coming Soon...
-    </div>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="logo"><img src="images/Kyoko.png" alt="" /></span>
+			<h1>Building Smarter Apps, Faster.</h1>
+			<!-- <p>Building Smarter Apps, Faster.<br /> -->
+			</p>
+		</header>
 
-    <!-- Trademark information -->
-    <div class="trademark">
-        &copy; Kyoko Corp.
-    </div>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#first">First Section</a></li>
+				<li><a href="#second">Second Section</a></li>
+				<li><a href="#cta">Get Started</a></li>
+			</ul>
+		</nav>
 
-    <!-- JavaScript to hide the loading overlay when the video is loaded -->
-    <script>
-        const video = document.getElementById("background-video");
-        video.addEventListener("canplaythrough", () => {
-            const loadingOverlay = document.querySelector(".loading-overlay");
-            loadingOverlay.style.display = "none";
-        });
-    </script>
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>Introduction</h2>
+						</header>
+						<p>At Kyoko Technologies, we specialize in creating and deploying lightweight, fully
+							customizable web applications in record time. Whether you're looking for a quick MVP to
+							launch your idea or need expert guidance on integrating AI into your business, our team has
+							the skills and tools to bring your vision to life.
+						</p>
+						<ul class="actions">
+							<li><a href="#first" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<span class="image"><img src="images/team.jpg" alt="" /></span>
+				</div>
+			</section>
+
+			<!-- First Section -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>Your Tech Vision, Realized Quickly</h2>
+				</header>
+				<ul class="features">
+					<li>
+						<span class="icon solid major style1 fa-rocket"></span>
+						<h3>Rapid MVP Development</h3>
+						<p>We build live, working MVPs (Minimum Viable Products) fast, allowing you to test and refine
+							your idea without the typical long lead times. Launch quickly and gather real-world
+							feedback.
+						</p>
+					</li>
+					<li>
+						<span class="icon major style3 solid fa-code"></span>
+						<h3>Fully Customizable Solutions</h3>
+						<p>Our in-house development approach means every application is built from the ground up with
+							custom code, giving you total control over every detail—from features to integrations.
+						</p>
+					</li>
+					<li>
+						<span class="icon major style5 solid fa-brain"></span>
+						<h3>AI-Powered Applications</h3>
+						<p>Harness the power of AI with seamless integrations. From chatbots to complex machine learning
+							algorithms, we bring cutting-edge intelligence to your applications.
+						</p>
+					</li>
+				</ul>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="highlights.html" class="button">View Our Projects</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<!-- Second Section -->
+			<section id="second" class="main special">
+				<header class="major">
+					<h2>Solutions With Everything You Need, All in One Place</h2>
+					<p>At Kyoko Technologies, we take care of all the technical heavy lifting so you can focus on what
+						really matters: <strong>your ideas.</strong></p>
+					<p>
+						From hosting and secure payment platforms to advanced AI
+						integrations like ChatGPT, we've got every aspect of your application covered. No need to juggle
+						multiple services or providers—we manage it all seamlessly under one roof.
+					</p>
+				</header>
+				<ul class="statistics">
+					<li class="style1">
+						<span class="icon solid fa-server"></span>
+						<strong>Hosting</strong> Fast, reliable, and scalable hosting solutions so your app can grow
+						effortlessly.
+					</li>
+					<li class="style2">
+						<span class="icon fa-credit-card"></span>
+						<strong>Payments</strong> Secure payment gateways for a smooth, trusted transaction experience.
+					</li>
+					<li class="style3">
+						<span class="icon solid fa-database"></span>
+						<strong>Databases</strong> Fully managed database solutions that ensure your data is secure and
+						accessible whenever you need it.
+					</li>
+					<li class="style4">
+						<span class="icon solid fa-robot"></span>
+						<strong>AI Integrations</strong> From chatbots powered by ChatGPT to more complex AI-driven
+						features, we make your applications smarter.
+
+					</li>
+					<li class="style5">
+						<span class="icon solid fa-user-shield"></span>
+						<strong>User Authentication</strong> Built-in, secure authentication systems to protect user
+						data and manage access effortlessly.
+					</li>
+				</ul>
+				<p class="content">Kyoko Technologies has already helped startups and established businesses alike turn
+					ideas into live, functioning products. We specialize in building from scratch, giving our clients an
+					advantage by delivering customized solutions that they fully own, manage, and scale as needed.
+					With a focus on AI integration and industry-standard technology stacks, we're able to deliver
+					applications that are fast, scalable, and ready for the future. Our clients range from small
+					startups looking to validate their ideas to businesses needing fast AI-powered solutions.
+				</p>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="howitworks.html" class="button">Learn How We Work With You</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Ready to Build Something Together?
+					</h2>
+					<p>Get in touch to discuss how Kyoko Technologies can help bring your idea to life. Whether it's a
+						rapid MVP build or a full-scale AI solution, we're here to make it happen.
+					</p>
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="contact.html" class="button primary">Get Started</a></li>
+						<li><a href="highlights.html" class="button">View Our Projects</a></li>
+					</ul>
+				</footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Got Other Questions?</h2>
+				<p>Got questions or want to learn more about how we can help your project? Contact us today and let's
+					chat! We're just a message away from making your vision a reality.</p>
+				<!-- <ul class="actions">
+					<li><a href="highlights.html" class="button">Learn More</a></li>
+				</ul> -->
+			</section>
+			<section>
+				<h2>Contact Us</h2>
+				<dl class="alt">
+					<!-- <dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd> -->
+					<dt>Email</dt>
+					<dd><a href="#">support@thekyoko.com</a></dd>
+				</dl>
+				<ul class="icons">
+					<!-- <li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li> -->
+					<!-- <li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li> -->
+					<li><a href="https://www.instagram.com/kyoko.tech/" target="_blank"
+							class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/KyokoTech" class="icon brands fa-github alt"><span
+								class="label">GitHub</span></a></li>
+					<!-- <li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li> -->
+				</ul>
+			</section>
+			<p class="copyright">&copy; Kyoko AI Technologies. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		// Smooth scrolling function
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault(); // Prevent default anchor click behavior
+
+				const targetId = this.getAttribute('href'); // Get the target ID
+				const targetElement = document.querySelector(targetId); // Select the target element
+
+				// Scroll to the target element smoothly
+				targetElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start' // Align to the start of the target element
+				});
+			});
+		});
+	</script>
+	<!-- Add Google analytics -->
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyB2bVJ2g9YIGaDlVarVeaA792gtR-rlRZQ",
+			authDomain: "kyoko-home.firebaseapp.com",
+			projectId: "kyoko-home",
+			storageBucket: "kyoko-home.appspot.com",
+			messagingSenderId: "327242758115",
+			appId: "1:327242758115:web:2ee555d42f7b5834c252d6",
+			measurementId: "G-66PVL7ESXY"
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		firebase.analytics().logEvent('page_view', {
+			page_path: window.location.pathname
+		});
+	</script>
+
 </body>
 
 </html>

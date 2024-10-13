@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Kyoko Technologies - Contact Us</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>Contact Us</h1>
+			<p>We're here to bring your ideas to life fast.</p>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Content -->
+
+			<section id="content" class="main">
+				<!-- Form -->
+				<section>
+					<h2>Send us an email</h2>
+					<form id="contactForm" onsubmit="sendEmail(event)">
+						<div class="row gtr-uniform">
+							<div class="col-6 col-12-xsmall">
+								<input type="text" name="contact-name" id="contact-name" value="" placeholder="Name"
+									required />
+							</div>
+							<div class="col-6 col-12-xsmall">
+								<input type="email" name="contact-email" id="contact-email" value="" placeholder="Email"
+									required />
+							</div>
+							<div class="col-12">
+								<select name="contact-category" id="contact-subject" required>
+									<option value="">- Subject -</option>
+									<option value="Consultation">Consultation</option>
+									<option value="General Inquiry">General Inquiry</option>
+									<option value="Career Opportunities">Career Opportunities</option>
+									<option value="Partnership Opportunities">Partnership Opportunities</option>
+								</select>
+							</div>
+							<div class="col-12">
+								<textarea name="contact-message" id="contact-message" placeholder="Enter your message"
+									required rows="6"></textarea>
+							</div>
+							<div class="col-12">
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<!-- <li><input type="reset" value="Reset" /></li> -->
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<h2>Got Other Questions?</h2>
+				<p>Got questions or want to learn more about how we can help your project? Contact us today and let's
+					chat! We're just a message away from making your vision a reality.</p>
+				<!-- <ul class="actions">
+					<li><a href="generic.html" class="button">Learn More</a></li>
+				</ul> -->
+			</section>
+			<section>
+				<h2>Contact Us</h2>
+				<dl class="alt">
+					<!-- <dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd> -->
+					<dt>Email</dt>
+					<dd><a href="#">support@thekyoko.com</a></dd>
+				</dl>
+				<ul class="icons">
+					<!-- <li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li> -->
+					<!-- <li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li> -->
+					<li><a href="https://www.instagram.com/kyoko.tech/" target="_blank"
+							class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+					<li><a href="https://github.com/KyokoTech" class="icon brands fa-github alt"><span
+								class="label">GitHub</span></a></li>
+					<!-- <li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li> -->
+				</ul>
+			</section>
+			<p class="copyright">&copy; Kyoko AI Technologies. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		function sendEmail(event) {
+			event.preventDefault();
+			const name = document.getElementById('contact-name').value;
+			const email = document.getElementById('contact-email').value;
+			const subject = document.getElementById('contact-subject').value;
+			const message = document.getElementById('contact-message').value;
+
+			const fullSubject = 'Kyoko Technologies: ' + subject;
+			const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+			// Construct the mailto link
+			const mailtoLink = `mailto:support@thekyoko.com?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+
+			// Open the user's email client
+			window.location.href = mailtoLink;
+			// Optionally clear the form fields
+			document.getElementById('contactForm').reset();
+		}
+	</script>
+
+	<!-- Add Google analytics -->
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyB2bVJ2g9YIGaDlVarVeaA792gtR-rlRZQ",
+			authDomain: "kyoko-home.firebaseapp.com",
+			projectId: "kyoko-home",
+			storageBucket: "kyoko-home.appspot.com",
+			messagingSenderId: "327242758115",
+			appId: "1:327242758115:web:2ee555d42f7b5834c252d6",
+			measurementId: "G-66PVL7ESXY"
+		};
+
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		firebase.analytics().logEvent('page_view', {
+			page_path: window.location.pathname
+		});
+	</script>
+</body>
+
+</html>

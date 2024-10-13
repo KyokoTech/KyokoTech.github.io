@@ -26,12 +26,10 @@
 		<header id="header" class="alt">
 			<span class="logo"><img src="images/Kyoko.png" alt="" /></span>
 			<h1>Building Smarter Apps, Faster.</h1>
-			<!-- <p>Building Smarter Apps, Faster.<br /> -->
-			</p>
 		</header>
 
 		<!-- Nav -->
-		<nav id="nav">
+		<nav id="nav" class="is-preload-body fadein-slowest">
 			<ul>
 				<li><a href="#intro" class="active">Introduction</a></li>
 				<li><a href="#first">First Section</a></li>
@@ -41,7 +39,7 @@
 		</nav>
 
 		<!-- Main -->
-		<div id="main">
+		<div id="main" class="is-preload-body fadein">
 
 			<!-- Introduction -->
 			<section id="intro" class="main">
@@ -235,7 +233,7 @@
 	<script type="module">
 		// Import the functions you need from the SDKs you need
 		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+		import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 		// TODO: Add SDKs for Firebase products that you want to use
 		// https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -254,7 +252,7 @@
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
 		const analytics = getAnalytics(app);
-		firebase.analytics().logEvent('page_view', {
+		logEvent(analytics, 'page_view', {
 			page_path: window.location.pathname
 		});
 	</script>

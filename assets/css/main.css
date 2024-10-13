@@ -210,6 +210,19 @@ body.is-preload *:after {
 	transition: none !important;
 }
 
+.is-preload-body *,
+.is-preload-body *:before,
+.is-preload-body *:after {
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
 /* Type */
 
 body {
@@ -3241,6 +3254,26 @@ table.alt tbody tr td {
 	opacity: 1;
 }
 
+.fadein {
+	-moz-transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
+	-ms-transition: opacity 1s ease;
+	transition: opacity 1s ease;
+	opacity: 1;
+}
+
+.fadein-slowest {
+	-moz-transition: opacity 1.5s ease;
+	-webkit-transition: opacity 1.5s ease;
+	-ms-transition: opacity 1.5s ease;
+	transition: opacity 1.5s ease;
+	-moz-transition-delay: 0.5s;
+	-webkit-transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+	opacity: 1;
+}
+
 #header.alt .logo {
 	-moz-transition: opacity 1.25s ease, -moz-transform 0.5s ease;
 	-webkit-transition: opacity 1.25s ease, -webkit-transform 0.5s ease;
@@ -3338,6 +3371,10 @@ body.is-preload #header.alt>* {
 	opacity: 0;
 }
 
+.is-preload-body {
+	opacity: 0;
+}
+
 body.is-preload #header.alt .logo {
 	-moz-transform: scale(0.8) rotate(-30deg);
 	-webkit-transform: scale(0.8) rotate(-30deg);
@@ -3348,10 +3385,10 @@ body.is-preload #header.alt .logo {
 /* Nav */
 
 #nav {
-	-moz-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+	/* -moz-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 	-webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 	-ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
-	transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+	transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease; */
 	background-color: #fbfaec;
 	color: #636363;
 	position: absolute;
